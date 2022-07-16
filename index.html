@@ -1,0 +1,781 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Jayant Rohila | Portfolio</title>
+		<meta
+			name="description"
+			content="I like to build &amp; Design websites for people like You. Currently learning &amp; making improvement in coding."
+		/>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+	
+		<link
+			href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<style>
+			.page-loading {
+				position: fixed;
+				z-index: 9999;
+				left: 0;
+				top: 0px;
+				right: 0px;
+				bottom: 0px;
+				-webkit-transform: translateX(-160%) skewX(20deg);
+				-moz-transform: translateX(-160%) skewX(20deg);
+				-o-transform: translateX(-160%) skewX(20deg);
+				-ms-transform: translateX(-160%) skewX(20deg);
+				transform: translateX(-160%) skewX(20deg);
+				-webkit-transition: all 2.4s;
+				-moz-transition: all 2.4s;
+				transition: all 2.4s;
+			}
+			.page-loading.lm.visible,
+			.page-loading.lmm.mask2-show {
+				-webkit-transform: translateX(0) skewX(0);
+				-moz-transform: translateX(0) skewX(0);
+				-o-transform: translateX(0) skewX(0);
+				-ms-transform: translateX(0) skewX(0);
+				transform: translateX(0) skewX(0);
+			}
+			.page-loading.visible {
+				-webkit-transition: all 2.4s;
+				-moz-transition: all 2.4s;
+				-o-transition: all 2.4s;
+				transition: all 2.4s;
+			}
+			.page-loading.lmm {
+				-webkit-transform: translateX(0) skewX(0);
+				-moz-transform: translateX(0) skewX(0);
+				-ms-transform: translateX(0) skewX(0);
+				-o-transform: translateX(0) skewX(0);
+				transform: translateX(0) skewX(0);
+			}
+			.page-loading.lmm {
+				-webkit-transform: translateX(160%) skewX(-20deg);
+				-moz-transform: translateX(160%) skewX(-20deg);
+				-ms-transform: translateX(160%) skewX(-20deg);
+				-o-transform: translateX(160%) skewX(-20deg);
+				transform: translateX(160%) skewX(-20deg);
+			}
+			.page-loading-inn {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			.page-loading-transform,
+			.ux-loading-transform {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				line-height: 36px;
+				text-align: center;
+				-webkit-transform: translate(-50%, -50%);
+				-moz-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				-o-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+			}
+			.page-loading ~ #wrap-outer #wrap,
+			.page-loading ~ #wrap-outer .cover-wrap:not(.topslider-revolu),
+			.page-loading ~ #wrap-outer .second-fullscreen {
+				opacity: 1;
+				-webkit-transform: translateX(0);
+				-moz-transform: translateX(0);
+				-ms-transform: translateX(0);
+				-o-transform: translateX(0);
+				transform: translateX(0);
+				-webkit-transition: all 1.5s;
+				-moz-transition: all 1.5s;
+				-o-transition: all 1.5s;
+				transition: all 1.5s;
+			}
+			.page-loading.visible ~ #wrap-outer #wrap,
+			.page-loading.visible ~ #wrap-outer .cover-wrap:not(.topslider-revolu),
+			.page-loading.visible ~ #wrap-outer .second-fullscreen {
+				opacity: 0;
+				-webkit-transform: translateX(120px);
+				-moz-transform: translateX(120px);
+				-ms-transform: translateX(120px);
+				-o-transform: translateX(120px);
+				transform: translateX(120px);
+				-webkit-transition: all 1.5s;
+				-moz-transition: all 1.5s;
+				transition: all 1.5s;
+			}
+			.mask2-show ~ #wrap-outer #wrap,
+			.mask2-show ~ #wrap-outer .cover-wrap,
+			.mask2-show ~ #wrap-outer .second-fullscreen {
+				opacity: 0;
+				-webkit-transform: translateX(-120px);
+				-moz-transform: translateX(-120px);
+				-ms-transform: translateX(-120px);
+				-o-transform: translateX(-120px);
+				transform: translateX(-120px);
+				-webkit-transition: all 11.5s 0.5s;
+				-moz-transition: all 11.5s 0.5s;
+				-o-transition: all 11.5s 0.5s;
+				transition: all 11.5s 0.5s;
+			}
+			.page-loading .loading-transform {
+				margin-top: 0;
+			}
+			.page-loading .site-loading-logo img {
+				max-height: 120px;
+				max-width: 200px;
+				width: 120px;
+				height: 120px;
+			}
+			.site-loading-logo .logo-h1 {
+				font-size: 24px;
+			}
+			.search-loading {
+				position: relative;
+			}
+			.search-loading:after,
+			.search-loading:before {
+				content: ".";
+				position: absolute;
+				left: -5px;
+				-webkit-animation: SearchLoadingBrething 1s infinite ease-in-out;
+				-moz-animation: SearchLoadingBrething 1s infinite ease-in-out;
+				animation: SearchLoadingBrething 1s infinite ease-in-out;
+			}
+			.search-loading:before {
+				left: 5px;
+				animation-delay: 0.2s;
+			}
+			@-webkit-keyframes SearchLoadingBrething {
+				0% {
+					opacity: 0.1;
+				}
+				50% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0.2;
+				}
+			}
+			@-moz-keyframes SearchLoadingBrething {
+				0% {
+					opacity: 0.1;
+				}
+				50% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0.2;
+				}
+			}
+			@keyframes SearchLoadingBrething {
+				0% {
+					opacity: 0.1;
+				}
+				50% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0.2;
+				}
+			}
+			.site-loading-logo .logo-h1 {
+				font-size: 24px;
+			}
+			.page-loading {
+				background-color: #172439;
+			}
+			.site-loading-logo h1 {
+				color: #fff;
+				letter-spacing: 5px;
+				font-family: "roboto";
+			}
+		</style>
+	</head>
+	<body
+		onload="LoadingAnimation()"
+		class="bg-gray-900 dark:bg-gray-900 dark"
+		data-new-gr-c-s-check-loaded="14.1068.0"
+		data-gr-ext-installed=""
+	>
+		<!-- Loading Animation  -->
+		<div class="page-loading lm visible">
+			<div class="page-loading-inn">
+				<div class="page-loading-transform">
+					<div class="site-loading-logo">
+						<div
+							class="text-gray-800 dark:text-gray-100 from-blue-500 to-teal-400 text-3xl sm:text-5xl"
+							style="-webkit-text-fill-color: transparent"
+						>
+							<h1
+								class="text-center font-black mb-4 pb-1 bg-clip-text bg-gradient-to-r text-gray-800 dark:text-gray-100"
+								style="line-height: 1.1"
+							>
+								Jayant Rohila,
+							</h1>
+							<h1
+								class="text-center font-black mb-4 pb-1 bg-clip-text bg-gradient-to-r text-gray-800 dark:text-gray-100"
+								style="line-height: 1.1"
+							>
+								I'm Web Developer
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="page-loading lmm">
+			<div class="page-loading-inn">
+				<div class="page-loading-transform">
+					<div class="site-loading-logo">
+						<h1>Jayant Rohila</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Loading Animation  -->
+		<div id="home" class="bg-gray-900 dark:bg-gray-900 dark">
+			<div
+				class="flex flex-col h-screen justify-between font-content antialiased"
+			>
+				<main class="mb-auto">
+					<div>
+						<div>
+							<!-- Padding -->
+							<section
+								class="bg-gray-900 dark:bg-gray-900 dark overflow-hidden"
+							>
+								<div class="mt-11 h-24"></div>
+							</section>
+							<!-- hero section -->
+							<section
+								class="bg-gray-900 dark:bg-gray-900 dark overflow-hidden"
+							>
+								<div
+									class="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 xl:py-20"
+								>
+									<div class="max-w-xl mx-auto px-5">
+										<div class="mb-4">
+											<div
+												data-aos="fade-up"
+												data-aos-duration="2000"
+												index="0"
+												class="flex justify-center items-center"
+											>
+												<span
+													class="text-sm font-black uppercase text-center text-blue-400 dark:text-blue-300"
+													style="letter-spacing: 0.35em"
+													>Hi👋🏼 my name is</span
+												>
+											</div>
+										</div>
+										<div
+											class="text-gray-800 dark:text-gray-100 from-blue-500 to-teal-400 text-3xl sm:text-5xl"
+											style="-webkit-text-fill-color: transparent"
+										>
+											<h1
+												data-aos="fade-up"
+												data-aos-duration="2900"
+												class="text-center font-black mb-4 pb-1 bg-clip-text bg-gradient-to-r text-gray-800 dark:text-gray-100"
+												style="line-height: 1.1"
+											>
+												Jayant Rohila,
+											</h1>
+											<h1
+												data-aos="fade-up"
+												data-aos-duration="3000"
+												class="text-center font-black mb-4 pb-1 bg-clip-text bg-gradient-to-r text-gray-800 dark:text-gray-100"
+												style="line-height: 1.1"
+											>
+												I'm Web Developer
+											</h1>
+										</div>
+										<p
+											data-aos="fade-up"
+											data-aos-duration="2500"
+											class="text-lg sm:text-xl text-center leading-7 sm:leading-8 text-gray-700 dark:text-gray-300"
+										>
+											I like to build &amp; Design websites for people like You.
+										</p>
+										<p
+											data-aos="fade-up"
+											data-aos-duration="2500"
+											class="text-lg sm:text-xl text-center leading-7 sm:leading-8 text-gray-700 dark:text-gray-300"
+										>
+											Currently learning &amp; making improvement in coding.
+										</p>
+									</div>
+								</div>
+							</section>
+							<!-- Padding -->
+							<section
+								class="bg-gray-900 dark:bg-gray-900 dark overflow-hidden"
+							>
+								<div class="mt-11 h-24"></div>
+							</section>
+							<!-- About Section -->
+							<section
+								class="bg-gray-900 dark:bg-gray-900 dark overflow-hidden"
+							>
+								<div
+									class="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 lg:py-20 flex flex-no-wrap md:items-start md:space-x-8 items-start flex-col-reverse md:flex-row-reverse md:space-x-reverse"
+								>
+									<div class="w-full md:flex-1 flex flex-col md:pl-1/10">
+										<div
+											data-aos="fade-up"
+											data-aos-duration="1300"
+											class="mb-4 flex"
+										>
+											<div index="0" class="flex justify-center items-center">
+												<span
+													class="text-sm font-black uppercase text-center text-gray-500 dark:text-gray-400"
+													style="letter-spacing: 0.35em"
+													>About me</span
+												>
+											</div>
+										</div>
+										<h2
+											data-aos="fade-up"
+											data-aos-duration="1400"
+											class="mt-0 mb-4 text-gray-900 dark:text-gray-100 text-2xl sm:text-3xl font-extrabold"
+											style="line-height: 1.125"
+										>
+											I'm Jayant Rohila
+										</h2>
+										<p
+											data-aos="fade-up"
+											data-aos-duration="1500"
+											class="text-lg sm:text-xl mb-3 text-gray-700 dark:text-gray-300"
+											style="line-height: 1.6"
+										>
+											I've been coding for about a year. I'm a College Student
+											who loves building full-stack applications &amp; Learning
+											new technologies. I've also wroked for many people with
+											their work.
+										</p>
+										<p
+											data-aos="fade-up"
+											data-aos-duration="1500"
+											class="text-lg sm:text-xl mb-3 text-gray-700 dark:text-gray-300"
+											style="line-height: 1.6"
+										>
+											When I'm not coding, I'm a photographer guy who also love
+											to listen songs.<a
+												href="https://dashboard.reactbricks.com"
+												class="text-lg"
+												element="[object Object]"
+											></a>
+										</p>
+										<div class="flex items-center flex-col sm:flex-row mt-4">
+											<a
+												data-aos="fade-in"
+												data-aos-duration="1500"
+												href="https://github.com/jayantrohila57"
+												target="_blank"
+												class="py-3 mx-2 my-2 rounded-full font-bold leading-none translate-hover-2 hover:shadow-lg transition-all ease-in-out duration-150 px-5 border border-sky-600 text-sky-600 hover:text-sky-600 dark:border-sky-500 dark:text-sky-500"
+												rel="noopener noreferrer"
+												index="0"
+												>Github Profile</a
+											>
+										</div>
+									</div>
+									<div
+										data-aos="zoom-in"
+										data-aos-duration="1500"
+										class="w-full mt-0 mb-10 md:w-2/5 md:mt-0 md:mb-0"
+									>
+										<div>
+											<img
+												src="https://images.reactbricks.com/original/db64e5e0-73db-4475-b29e-c0d4b9146425/JayantRohila.jpg"
+												alt="Jayant Rohila"
+												class="rounded-lg shadow-2xl"
+											/>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- skill -->
+							<section
+								class="bg-gray-900 dark:bg-gray-900 dark overflow-hidden"
+							>
+								<div
+									class="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 lg:py-20 flex flex-no-wrap md:items-start md:space-x-8 items-center flex-col md:flex-row"
+								>
+									<div class="w-full md:flex-1 flex flex-col md:pr-1/10">
+										<div
+											data-aos="fade-up"
+											data-aos-duration="1500"
+											class="mb-4 flex justify-center md:justify-start"
+										>
+											<div index="0" class="flex justify-center items-center">
+												<span
+													class="text-sm font-black uppercase text-center text-gray-500 dark:text-gray-400"
+													style="letter-spacing: 0.35em"
+													>skills</span
+												>
+											</div>
+										</div>
+										<h2
+											data-aos="fade-up"
+											data-aos-duration="1500"
+											class="mt-0 mb-4 text-gray-900 dark:text-gray-100 text-center md:text-left text-2xl sm:text-3xl font-extrabold"
+											style="line-height: 1.125"
+										>
+											Some of My Skills
+										</h2>
+										<p
+											data-aos="fade-up"
+											data-aos-duration="1600"
+											class="text-lg sm:text-xl mb-3 text-gray-700 dark:text-gray-300 text-center md:text-left"
+											style="line-height: 1.6"
+										>
+											What Library &amp; Framework I mostly use while coding.
+										</p>
+										<div
+											class="mt-4 w-full flex flex-col lg:flex-row lg:flex-wrap lg:justify-between"
+										>
+											<div
+												data-aos="fade-up"
+												data-aos-duration="1500"
+												class="flex justify-start items-center py-2 leading-tight lg:w-2/5 text-lg"
+												index="0"
+											>
+												<div
+													class="flex justify-center items-center w-5 h-5 rounded-full mr-4 text-sm bg-sky-500 text-white"
+													style="min-width: 1.25rem"
+												>
+													<svg
+														stroke="currentColor"
+														fill="none"
+														stroke-width="2"
+														viewBox="0 0 24 24"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<polyline points="20 6 9 17 4 12"></polyline>
+													</svg>
+												</div>
+												<span class="dark:text-gray-100 text-sky-500"
+													>Nextjs/React</span
+												>
+											</div>
+											<div
+												data-aos="fade-up"
+												data-aos-duration="1600"
+												class="flex justify-start items-center py-2 leading-tight lg:w-2/5 text-lg"
+												index="1"
+											>
+												<div
+													class="flex justify-center items-center w-5 h-5 rounded-full mr-4 text-sm bg-sky-500 text-white"
+													style="min-width: 1.25rem"
+												>
+													<svg
+														stroke="currentColor"
+														fill="none"
+														stroke-width="2"
+														viewBox="0 0 24 24"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<polyline points="20 6 9 17 4 12"></polyline>
+													</svg>
+												</div>
+												<span class="dark:text-gray-100 text-sky-500"
+													>Material-UI</span
+												>
+											</div>
+											<div
+												data-aos="fade-up"
+												data-aos-duration="1700"
+												class="flex justify-start items-center py-2 leading-tight lg:w-2/5 text-lg"
+												index="2"
+											>
+												<div
+													class="flex justify-center items-center w-5 h-5 rounded-full mr-4 text-sm bg-sky-500 text-white"
+													style="min-width: 1.25rem"
+												>
+													<svg
+														stroke="currentColor"
+														fill="none"
+														stroke-width="2"
+														viewBox="0 0 24 24"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<polyline points="20 6 9 17 4 12"></polyline>
+													</svg>
+												</div>
+												<span class="dark:text-gray-100 text-sky-500"
+													>Firebase/Netlify</span
+												>
+											</div>
+											<div
+												data-aos="fade-up"
+												data-aos-duration="1800"
+												class="flex justify-start items-center py-2 leading-tight lg:w-2/5 text-lg"
+												index="3"
+											>
+												<div
+													class="flex justify-center items-center w-5 h-5 rounded-full mr-4 text-sm bg-sky-500 text-white"
+													style="min-width: 1.25rem"
+												>
+													<svg
+														stroke="currentColor"
+														fill="none"
+														stroke-width="2"
+														viewBox="0 0 24 24"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<polyline points="20 6 9 17 4 12"></polyline>
+													</svg>
+												</div>
+												<span class="dark:text-gray-100 text-sky-500"
+													>Tailwind/SCSS</span
+												>
+											</div>
+										</div>
+									</div>
+									<div
+										class="flex w-full md:w-2/5 lg:w-1/2 max-w-xs md:max-w-sm mx-auto mt-10 md:mt-0 flex-wrap justify-center -mb-6"
+									>
+										<div data-aos="zoom-in" data-aos-duration="1500" index="0">
+											<div
+												class="w-16 h-16 lg:w-24 lg:h-24 mx-3 mb-6 p-2 flex justify-center items-center bg-white rounded-full shadow-xl"
+											>
+												<img
+													src="https://images.reactbricks.com/original/3a8728ab-7e86-4c6e-bf34-3b94a71c3d43/javascript.png"
+													alt="JAVASCRIPT "
+													class="w-12 h-12 lg:w-16 lg:h-16"
+													srcset="
+														https://images.reactbricks.com/src_set/3a8728ab-7e86-4c6e-bf34-3b94a71c3d43-1170/javascript.png 1170w,
+														https://images.reactbricks.com/src_set/3a8728ab-7e86-4c6e-bf34-3b94a71c3d43-800/javascript.png   800w,
+														https://images.reactbricks.com/src_set/3a8728ab-7e86-4c6e-bf34-3b94a71c3d43-400/javascript.png   400w,
+														https://images.reactbricks.com/src_set/3a8728ab-7e86-4c6e-bf34-3b94a71c3d43-200/javascript.png   200w
+													"
+												/>
+											</div>
+										</div>
+										<div data-aos="zoom-in" data-aos-duration="1500" index="1">
+											<div
+												class="w-16 h-16 lg:w-24 lg:h-24 mx-3 mb-6 p-2 flex justify-center items-center bg-white rounded-full shadow-xl"
+											>
+												<img
+													src="https://images.reactbricks.com/original/c3504d73-9c64-4ed3-a34b-87835e668b17/react.svg"
+													alt="React"
+													class="w-12 h-12 lg:w-16 lg:h-16"
+													style=""
+													srcset=""
+												/>
+											</div>
+										</div>
+										<div data-aos="zoom-in" data-aos-duration="1500" index="2">
+											<div
+												class="w-16 h-16 lg:w-24 lg:h-24 mx-3 mb-6 p-2 flex justify-center items-center bg-white rounded-full shadow-xl"
+											>
+												<img
+													src="https://images.reactbricks.com/original/29cb37d5-c19d-49cc-90e3-c245c7913241/next-js.svg"
+													alt="Next.js"
+													class="w-12 h-12 lg:w-16 lg:h-16"
+													style=""
+													srcset=""
+												/>
+											</div>
+										</div>
+										<div data-aos="zoom-in" data-aos-duration="1500" index="3">
+											<div
+												class="w-16 h-16 lg:w-24 lg:h-24 mx-3 mb-6 p-2 flex justify-center items-center bg-white rounded-full shadow-xl"
+											>
+												<img
+													src="https://images.reactbricks.com/original/8b8cda87-ba9b-45c6-a1cb-acf61cf7f525/tailwind-css.svg"
+													alt="Tailwind CSS"
+													class="w-12 h-12 lg:w-16 lg:h-16"
+													style=""
+													srcset=""
+												/>
+											</div>
+										</div>
+										<div data-aos="zoom-in" data-aos-duration="1500" index="4">
+											<div
+												class="w-16 h-16 lg:w-24 lg:h-24 mx-3 mb-6 p-2 flex justify-center items-center bg-white rounded-full shadow-xl"
+											>
+												<img
+													src="https://images.reactbricks.com/original/22e7c5a0-14e5-482c-89e4-e41de520226a/materialui.jpg"
+													alt="material-ui"
+													class="w-12 h-12 lg:w-16 lg:h-16"
+													style=""
+													srcset="
+														https://images.reactbricks.com/src_set/22e7c5a0-14e5-482c-89e4-e41de520226a-400/materialui.jpg 400w,
+														https://images.reactbricks.com/src_set/22e7c5a0-14e5-482c-89e4-e41de520226a-200/materialui.jpg 200w
+													"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- Padding -->
+							<section
+								class="bg-gray-900 dark:bg-gray-900 dark overflow-hidden"
+							>
+								<div class="mt-11 h-24"></div>
+							</section>
+							<!-- project title -->
+							<section
+								class="bg-gray-900 dark:bg-gray-900 dark overflow-hidden"
+							>
+								<div
+									class="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 xl:py-20"
+								>
+									<div class="max-w-xl mx-auto px-5">
+										<div
+											class="text-gray-800 dark:text-gray-100 from-blue-500 to-teal-400 text-3xl sm:text-5xl"
+											style="-webkit-text-fill-color: transparent"
+										>
+											<h1
+												class="text-center font-black mb-4 pb-1 bg-clip-text bg-gradient-to-r text-gray-800 dark:text-gray-100"
+												style="line-height: 1.1"
+											>
+												My Coding Projects
+											</h1>
+										</div>
+										<p
+											class="text-lg sm:text-xl text-center leading-7 sm:leading-8 text-gray-700 dark:text-gray-300"
+										>
+											Websites &amp; other appapplications
+										</p>
+									</div>
+								</div>
+							</section>
+							<div id="projectsList"></div>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+		<!-- end -->
+		<script>
+			function LoadingAnimation() {
+				const div = document.querySelector("div");
+				div.classList.remove("visible");
+			}
+
+			let projects = [
+				{
+					h2: "Voltsec Pentest Website",
+					p: "This website made using ReactJS, Style framework Material-UI, Animation framer-motion & AOS, Hosting & Auth Firebase, Database Firebase.",
+					Link: "https://voltsec.web.app/",
+					git: "https://voltsec.web.app/",
+					ImgSrc: "./img/Voltsec.png",
+				},
+				{
+					h2: "Ancient OS Website",
+					p: "This website made using HTML, Style CSS/SCSS, Animation AOS, Hosting Netlify",
+					Link: "https://ancientrom.xyz/",
+					git: "https://ancientrom.xyz/",
+					ImgSrc: "./img/ancientos.png",
+				},
+				{
+					h2: "TraceHub Website",
+					p: "This website made using ReactJS, Style CSS/SCSS, Animation framer-motion &amp; AOS, Frontend Hosting Netlify, ExpressJS Hosting Heroku, Database MongoDB-Atlas.",
+					Link: "https://tracehub.netlify.app/",
+					git: "https://tracehub.netlify.app/",
+					ImgSrc: "./img/tracehub.png",
+				},
+				{
+					h2: "Portfolio -v1",
+					p: "This website made using HTML, Style CSS/SCSS, Animation AOS, Hosting Netlify",
+					Link: "https://jayantrohila.netlify.app/",
+					git: "https://jayantrohila.netlify.app/",
+					ImgSrc: "./img/portfolio.png",
+				},
+			];
+
+			projects.map((element, key) => {
+				var div = document.createElement("div");
+				div.innerHTML = `
+<section class="bg-gray-900 dark:bg-gray-900 ">
+
+		<div class="flex p-10 justify-around flex-row">
+			<div
+				data-aos="zoom-in"
+				data-aos-duration="1900"
+				class="mt-10 mb-0 md:w-2/5 md:mt-0 md:mb-0"
+			>
+			<div>
+					<img
+						src="${element.ImgSrc}"
+						alt="portfolio"
+						class="rounded-lg shadow-2xl"
+					/>
+				</div>
+			</div>
+
+			<div class="w-96 p-2 ml-5 flex flex-col">
+				<h2
+					data-aos="fade-up"
+					data-aos-duration="1600"
+					class="mt-5 mb-4 text-gray-900 dark:text-gray-100 text-2xl sm:text-3xl font-extrabold"
+					style="line-height: 1.125"
+				>
+					${element.h2}
+				</h2>
+				<p
+					data-aos="fade-up"
+					data-aos-duration="1800"
+					class="text-lg sm:text-xl mb-3 text-gray-700 dark:text-gray-300"
+					style="line-height: 1.6"
+				>
+					${element.p}
+				</p>
+				<div
+					data-aos="fade-in"
+					data-aos-duration="1600"
+					class="flex items-start flex-row sm:flex-row mt-4"
+				>
+					<a
+						href="${element.Link}"
+						target="_blank"
+						class="py-3 mx-2 my-2 rounded-full font-bold leading-none translate-hover-2 hover:shadow-lg transition-all ease-in-out duration-150 px-5 border border-sky-600 text-sky-600 hover:text-sky-600 dark:border-sky-500 dark:text-sky-500"
+						rel="noopener noreferrer"
+						index="0"
+					>
+						Demo
+					</a>
+					<a
+						href="${element.git}"
+						target="_blank"
+						class="py-3 mx-2 my-2 rounded-full font-bold leading-none translate-hover-2 hover:shadow-lg transition-all ease-in-out duration-150 px-5 border border-sky-600 text-sky-600 hover:text-sky-600 dark:border-sky-500 dark:text-sky-500"
+						rel="noopener noreferrer"
+						index="0"
+					>
+						Github
+					</a>
+				</div>
+			</div>
+		</div>
+	
+</section>;
+`;
+				document.getElementById("projectsList").appendChild(div);
+			});
+		</script>
+		<script>
+			AOS.init();
+		</script>
+	</body>
+</html>
